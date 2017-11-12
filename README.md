@@ -32,8 +32,8 @@ js那种弱类型的处理方式。核心的点就是这个库自己实现了Map
     ├── map.go                            # a custom map implemenation. type Map = map[string] interface{}, all constructors specified in this file
     ├── mutations.go                      # provide some method to create a new Map out of exsiting one
     ├── security.go                       # provide a simple implementation for hashing key & data
-    ├── tests.go                          # test key in Map or not
-ts_test.go
-    ├── type_specific_codegen.go          # 这个文件对go 语言中的每种类型都做了一次封装, 看看2k的代码行数，就知道go语言中缺失泛型
-    │                                     # 导致的问题是多么严重了，代码的重复率太高了，这个文件看懂一个type的实现就可以了，其他都是类似的
+    ├── tests.go                          # test key in Map or not ts_test.go
+    ├── type_specific_codegen.go          # 这个文件对go 语言中的每种类型都做了一次封装, 看看2k的代码行数，
+    │                                     # 就知道go语言中缺失泛型，导致的问题是多么严重了，代码的重复率太高了
+    │                                     # 这个文件看懂一个type的实现就可以了，其他都是类似的
     ├── value.go                          # 封装了 Value 类型的一些方法
