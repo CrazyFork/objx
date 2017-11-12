@@ -78,7 +78,7 @@ func access(current, selector, value interface{}, isSet, panics bool) interface{
 		var err error
 
 		// https://github.com/stretchr/objx/issues/12
-		if strings.Contains(thisSel, "[") {
+		if strings.Contains(thisSel, "[") { // avoid expensive regex match
 
 			arrayMatches := arrayAccesRegex.FindStringSubmatch(thisSel)
 
@@ -107,7 +107,7 @@ func access(current, selector, value interface{}, isSet, panics bool) interface{
 		switch current.(type) {
 		case map[string]interface{}:
 			curMSI := current.(map[string]interface{})
-			if len(selSegs) <= 1 && isSet {
+			if len(selSegs) <= 1 && isSet { // set value
 				curMSI[thisSel] = value
 				return nil
 			} else {
